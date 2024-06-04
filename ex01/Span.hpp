@@ -6,7 +6,7 @@
 /*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 12:10:08 by francesco         #+#    #+#             */
-/*   Updated: 2024/06/04 15:16:29 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/06/04 16:24:33 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ class Span
     private:
         std::vector<int>    v;
         unsigned    int     max;
-        unsigned    int     x;
-    public:
         Span();
+    public:
         Span(const Span &to_copy);
         Span(unsigned int   max_int);
         ~Span();

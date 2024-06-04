@@ -6,7 +6,7 @@
 /*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 11:41:23 by francesco         #+#    #+#             */
-/*   Updated: 2024/06/04 14:21:37 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/06/04 16:20:07 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@ int main( void )
 {
     std::vector<int> v;
     std::vector<int> f;
+    const   int t = 4;
 
     for (int i = 0; i < 5; i++)
         v.push_back(i);
     try
     {
-        std::cout << *(::easyfind(v, 4)) << std::endl;
+        std::cout << *(::easyfind(v, t)) << std::endl;
         std::cout << *(::easyfind(f, 4)) << std::endl;
     }
     catch (std::exception &e)

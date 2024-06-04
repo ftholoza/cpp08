@@ -6,7 +6,7 @@
 /*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 17:29:25 by francesco         #+#    #+#             */
-/*   Updated: 2024/06/04 16:11:36 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/06/04 16:28:58 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,4 +110,19 @@ int main( void )
     {
         std::cerr << e.what() << '\n';
     }
+    try
+    {
+        Span a(4);
+        a.addNumber(1);
+        a.addNumber(2000);
+        a.addNumber(999);
+        a.addNumber(1000);
+        std::cout << a.shortestSpan() << std::endl;
+        std::cout << a.longestSpan() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
 }
