@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 11:21:50 by francesco         #+#    #+#             */
-/*   Updated: 2024/06/03 09:50:40 by francesco        ###   ########.fr       */
+/*   Updated: 2024/06/04 13:23:13 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 #include <iostream>
 #include <iterator>
+#include <algorithm>
 #include <vector>
+#include <cmath>
 
 class   ErrorNoOccurence : public std::exception
 {
@@ -27,15 +29,13 @@ template<typename T>
 
 int *easyfind(T &container, int target)
 {
-    typename T::iterator it = container.begin();
-    while (it < container.end())
-    {
-        if (*it == target)
-            return (&(*it));
-        it++;
-    }
-    throw(ErrorNoOccurence());
-    return (NULL);
+    typename T::iterator it;
+    
+    it = std::find(container.begin(), container.end(), target);
+    if (it == container.end())
+        throw(ErrorNoOccurence());
+    else
+        return (&(*it));
 }
 
 const char *ErrorNoOccurence::what() const throw()
