@@ -6,7 +6,7 @@
 /*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 15:51:41 by francesco         #+#    #+#             */
-/*   Updated: 2024/06/04 16:25:24 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/06/04 18:20:58 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ int     Span::longestSpan()
         throw (ErrorNotEnoughElements());
     min = *std::min_element(this->v.begin(), this->v.end());
     max = *std::max_element(this->v.begin(), this->v.end());
-    return (max - min);
+    return (std::abs(max - min));
 }
 
 const char *Span::ErrorNotEnoughElements::what() const throw()
