@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 11:41:23 by francesco         #+#    #+#             */
-/*   Updated: 2024/06/03 09:59:13 by francesco        ###   ########.fr       */
+/*   Updated: 2024/06/04 14:21:37 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,18 @@ int main( void )
     {
         std::cout << e.what() << std::endl;
     }
+    try
+    {
+        std::list<int> s;
+
+        for (int i = 0; i < 10; i++)
+            s.push_back(i);
+        std::cout << *(::easyfind(s, 7)) << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
     
 }

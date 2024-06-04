@@ -6,7 +6,7 @@
 /*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 12:10:08 by francesco         #+#    #+#             */
-/*   Updated: 2024/06/04 13:23:03 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/06/04 15:16:29 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iostream>
 #include <algorithm>
 #include <utility>
+#include <iterator>
 
 
 
@@ -25,6 +26,7 @@ class Span
     private:
         std::vector<int>    v;
         unsigned    int     max;
+        unsigned    int     x;
     public:
         Span();
         Span(const Span &to_copy);
@@ -34,8 +36,10 @@ class Span
         Span& operator=(const Span &to_copy);
         
         void    addNumber(int nb);
+        void    show();
         int     shortestSpan();
         int     longestSpan();
+        void    addNumbers(const std::vector<int>::iterator begin, const std::vector<int>::iterator end);
         
         class   ErrorNotEnoughElements : public std::exception
         {

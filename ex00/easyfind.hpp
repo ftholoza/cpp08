@@ -6,7 +6,7 @@
 /*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 11:21:50 by francesco         #+#    #+#             */
-/*   Updated: 2024/06/04 13:23:13 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/06/04 14:21:16 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,17 @@
 #include <iterator>
 #include <algorithm>
 #include <vector>
+#include <stack>
 #include <cmath>
+#include <list>
 
 class   ErrorNoOccurence : public std::exception
+{
+    public:
+    const char *what() const throw ();
+};
+
+class   ErrorParam : public std::exception
 {
     public:
     const char *what() const throw ();
@@ -41,6 +49,11 @@ int *easyfind(T &container, int target)
 const char *ErrorNoOccurence::what() const throw()
 {
     return ((char *)"\033[1;31mError: No occurence found\33[0m");
+}
+
+const char *ErrorParam::what() const throw()
+{
+    return ((char *)"\033[1;31mError: Param\33[0m");
 }
 
 #endif
